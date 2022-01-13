@@ -8,17 +8,21 @@
 let app;
 
 
+
 window.onload = function() {
-    app = new PIXI.Application(
-        {
+    app = new PIXI.Application({
             width: 800,
             height: 600,
             backgroundColor: 0xAAAAAA
         }
     );
 
-document.body.appendChild(app.view);
+document.querySelector("#gameDiv").appendChild(app.view);
+app.ticker.add(gameLoop);
 
+}
+function gameLoop(delta){
+    
 }
 </script>
 
