@@ -2,7 +2,62 @@
 <html>
   <head>
     <title>PIXI.js Boilerplate Project</title>
+    <script src="js/pixi.min.js"></script>
 
+<script>
+let app;
+let fish;
+let pointerIsDown = false;
+let pointerIsDownOver = false;
+
+
+window.onload = function() {
+    app = new PIXI.Application({
+            width: 800,
+            height: 600,
+            backgroundColor: 0xAAAAAA
+        }
+    );
+
+document.querySelector("#gameDiv").appendChild(app.view);
+
+app.loader.baseUrl = "photo";
+app.loader
+.add("idle", "small.png")
+.add("down", "big.png");
+app.loader.onComplete.add(doneLoading);
+add.loader.load();
+
+
+
+
+app.ticker.add(gameLoop);
+
+
+
+}
+function gameLoop(delta){
+    fish = new PIXI.Sprite.from(app.loader.resources["idle"].texture);
+    fish.anchor.set(0.5);
+    fish.x = app.view.width / 2;
+    fish.y = app.view.height /2;
+
+fish.interactive = true;
+fish.buttonMode = true;
+
+
+    app.stage.appendChild(fish);
+}
+
+
+
+
+
+</script>
+
+
+
+  </head>
     <meta charset="utf-8" />
     <style type="text/css">
       body {
