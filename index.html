@@ -2,7 +2,29 @@
 <html>
   <head>
     <title>PIXI.js Boilerplate Project</title>
+    <script src="js/pixi.min.js"></script>
 
+<script>
+let app;
+
+
+window.onload = function() {
+    app = new PIXI.Application(
+        {
+            width: 800,
+            height: 600,
+            backgroundColor: 0xAAAAAA
+        }
+    );
+
+document.body.appendChild(app.view);
+
+}
+</script>
+
+
+
+  </head>
     <meta charset="utf-8" />
     <style type="text/css">
       body {
